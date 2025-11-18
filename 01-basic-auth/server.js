@@ -1,14 +1,14 @@
 const express = require('express');
 const app = express();
 
-const demoTasks = [
+var demoTasks = [
   { id: 1, title: 'My first task', completed: true },
   { id: 2, title: 'My second task', completed: false }
 ];
 
 function basicAuth(req, res, next) {
   const authHeader = req.headers.authorization;
-
+  
   if (!authHeader || !authHeader.startsWith('Basic ')) {
     return res.status(401).json({ error: 'Missing credentials' });
   }
@@ -17,7 +17,7 @@ function basicAuth(req, res, next) {
   const credentials = Buffer.from(base64, 'base64').toString('utf-8');
   const [username, password] = credentials.split(':');
 
-  console.log('Credentials received:', username); // Show in terminal
+  console.log('Credentials received:', username, credentials); // Show in terminal
 
   // NOTE: username and password are hardcoded for demo purposes
   if (username === 'admin' && password === 'secret123') {

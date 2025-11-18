@@ -1,0 +1,16 @@
+{
+  "name": "01-basic-auth",
+  "version": "1.0.0",
+  "description": "HTTP Basic Authentication sends credentials (username:password) encoded in Base64 with every request in the `Authorization` header.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
